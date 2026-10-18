@@ -50,7 +50,7 @@ Each component has a specific responsibility:
 
 ## Verified experiment: `BANK-PAY-001`
 
-The reviewed [execution evidence](examples/verified_ai_run/README.md), run `demo-66c9b6ebceee4839a2202e3eb006d57e`, records that the application-driven pipeline was successfully run in **`AI_ASSISTED` mode with genuine Microsoft OptiMind-SFT inference**, followed by Gurobi optimization and independent validation. The run recorded `genuine_inference: true` and `fallback_used: false`.
+The reviewed [execution evidence](examples/verified_ai_run/README.md), records that the application-driven pipeline was successfully run in **`AI_ASSISTED` mode with genuine Microsoft OptiMind-SFT inference**, followed by Gurobi optimization and independent validation. The run recorded `genuine_inference: true` and `fallback_used: false`.
 
 The synthetic critical payments application includes **PROD, DEV, SIT, UAT, and dedicated local disaster recovery**. The existing shared identity service is a relevant application dependency.
 
@@ -87,8 +87,6 @@ The DR model uses **independent local failure domains** at the selected site; it
 | Total recorded execution time | Approximately 86.4 seconds |
 
 All costs and latencies are synthetic modeled values, not live prices or production measurements. The duration is one recorded pipeline attempt, not a cold-download benchmark. This documentation review did not rerun genuine inference.
-
-The original 50-entry run manifest, input hashes, model/revision records, response hash, problem/specification/compiler identities and agreement between the three reports were checked. Independent recomputation confirmed the metrics and objective. The [public subset](examples/verified_ai_run/README.md) preserves selected artifacts unchanged; it is not a complete replay bundle or externally signed attestation. The separate runtime/test receipt is missing from the downloaded run, so its previously reported 353-test result is not independently established by that bundle. See [evidence limitations](examples/verified_ai_run/verification.json).
 
 ### Why AWS Hong Kong?
 
@@ -167,8 +165,6 @@ You need an appropriate **Gurobi installation/license**. The recorded experiment
 
 Keep exactly one new application card and match its ID in `scenario.yaml`. Existing portfolio applications remain fixed dependency/risk context; capacity inputs are residual after existing workloads, so do not subtract that usage again. Demand is per environment, with an additional DR reservation. See [input configuration](docs/INPUTS.md).
 
-**Implementation limitation:** The nonproduction-Hong-Kong restriction is hardcoded in the eligibility filter and independently checked by the validator. A strict SG-only policy would make the current four-environment example infeasible. Adding new kinds of policy constraints can require changes to the trusted compiler, independent validator, and tests—not just editing YAML.
-
 ### 3. Run the reference optimizer
 
 ```bash
@@ -214,7 +210,6 @@ A successful AI run must show `RECOMMENDED`, `source: OPTIMIND_SPEC_TRUSTED_MILP
 | [`examples/verified_ai_run/`](examples/verified_ai_run/) | Reviewed public AI evidence subset |
 | `results/` | Generated local runs; excluded from Git |
 
-The [migration report](MIGRATION_REPORT.md) records the earlier research transition. Historical SMALL-1 evidence is preserved separately from this public example; its results are not BANK-PAY-001 results. Required configuration templates under `config/runtime/` remain part of the repository.
 
 ## Scope and limitations
 
@@ -230,4 +225,4 @@ The [migration report](MIGRATION_REPORT.md) records the earlier research transit
 
 ## License and research status
 
-The existing [MIT license](LICENSE) covers this repository as stated in that file; model weights, model-output redistribution rights, Gurobi and dependencies have independent terms. See the [scoped publication review](LICENSE_REVIEW_REQUIRED.md) and [security review](docs/SECURITY_REVIEW.md). The selected source and synthetic example were reviewed for this research release; commercial-use eligibility and a comprehensive production security audit are not certified. No model weights, credentials, local machine paths or license files are included in the public example.
+The existing [MIT license](LICENSE) covers this repository as stated in that file; model weights, model-output redistribution rights, Gurobi and dependencies have independent terms. The selected source and synthetic example were reviewed for this research release; commercial-use eligibility and a comprehensive production security audit are not certified. No model weights, credentials, local machine paths or license files are included in the public example.
