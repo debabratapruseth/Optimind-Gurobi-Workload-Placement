@@ -2,7 +2,7 @@
 
 A genuine BANK-PAY OptiMind-SFT + Gurobi execution has now been recorded in Colab; see the [verified public example](../examples/verified_ai_run/README.md) and its evidence limitations. Local reference success and mocked AI tests alone are not AI inference evidence.
 
-Use [notebooks/run_pipeline.ipynb](../notebooks/run_pipeline.ipynb) in Google Colab. The pinned model is `microsoft/OptiMind-SFT` at `817e06666a39155f9352d00354b3227d230da46d`. It uses Transformers, BF16, no quantization, and no remote custom model code. The recorded research hardware was an NVIDIA A100 80 GB; current free GPU/RAM/disk must pass live preflight. Do not lower safety guards to force a launch.
+Use [notebooks/run_pipeline.ipynb](../notebooks/run_pipeline.ipynb) in Google Colab. The pinned model is `microsoft/OptiMind-SFT`. It uses Transformers, BF16, no quantization, and no remote custom model code. The recorded research hardware was an NVIDIA A100 80 GB; current free GPU/RAM/disk must pass live preflight. Do not lower safety guards to force a launch.
 
 1. Place the complete cleaned repository—including tests and fixtures—in `MyDrive/optimind-gurobi-workload-placement`. Configure the application and inputs there first. The notebook stages a new local copy and excludes environments, caches, Git metadata, and old results.
 2. Keep the saved project notebook at `USE_AI=False`, `RUN_PIPELINE=False`, with outputs cleared before staging. After staging, choose the mode in the active notebook. A reference run first is optional. Install `requirements.txt`; the reference CLI needs no GPU, but this notebook’s shared verification gate requires a Colab GPU runtime. Run runtime verification and inspect the full suite plus actual application formulation results.
