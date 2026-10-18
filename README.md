@@ -1,4 +1,4 @@
-# Beyond LLMs and Machine Learning: AI-Assisted Decision Optimization
+# Beyond LLMs and Machine Learning: AI-Assisted Decision Optimization in Banking
 
 **Exploring a new approach to complex enterprise decision-making by combining AI, mathematical decision models, and optimization.**
 
