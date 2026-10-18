@@ -1,7 +1,5 @@
 # BANK-PAY-001 modeled-policy and explanation audit
 
-Audit date: 2026-10-17. Scope: configured synthetic internal policy, not interpretation of Singapore or Hong Kong law. Policy behavior and historical evidence were not changed. No GitHub push was performed.
-
 ## Finding and intended semantics
 
 **AWS_HK is explicitly permitted by the current configuration.** `data_country: SG` is a policy lookup key paired with `classification: CONFIDENTIAL_PII`; it is not an equality constraint requiring physical hosting in Singapore. The matching policy permits AWS hosting and processing in both SG and HK. No exception or waiver mechanism exists. Unknown schema fields are rejected; missing or duplicate policies fail closed.
@@ -83,4 +81,3 @@ Focused regression coverage includes hosting and processing SG-only restrictions
 
 The user confirmed the configured SG/HK permissions; external regulatory approval remains outside this audit. Recovery and capacity are static asserted evidence, not live cloud verification. Local DR is same-site independent domains, not cross-region disaster recovery. Real OptiMind inference requires its verified runtime; mocked inference tests do not demonstrate live model behavior. Optimality is relative to the mathematical model and solver tolerances, not external legal or operational approval.
 
-Final validation: **353 passed, 0 failed, 0 skipped** (15.05 seconds), including 18 new cases. Test source manifest and generated artifact hashes verified. Fresh run: `results/regulatory-audit/demo-9cbad6eb4c5a47f7a28c30b759c5723b/`, with 31 explicit constraint checks. Original research preservation check: 6,046 files before and after, zero hash or inventory changes. No GitHub push.
