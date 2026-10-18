@@ -1,0 +1,45 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+synthetic: true
+metric: P95_MS
+missing_latency_action: BLOCK
+latency_matrix_ms:
+  AWS_HK:
+    AWS_HK: 3
+    AZURE_HK: 8
+    GLOBAL_DC_HK: 14
+    AWS_SG: 25
+  AZURE_HK:
+    AWS_HK: 9
+    AZURE_HK: 3
+    GLOBAL_DC_HK: 18
+    AWS_SG: 28
+  GLOBAL_DC_HK:
+    AWS_HK: 12
+    AZURE_HK: 16
+    GLOBAL_DC_HK: 3
+    AWS_SG: 29
+  AWS_SG:
+    AWS_HK: 25
+    AZURE_HK: 27
+    GLOBAL_DC_HK: 28
+    AWS_SG: 3
+failure_scenarios:
+- id: AWS_HK_OUTAGE
+  type: SITE
+  site_id: AWS_HK
+- id: AZURE_HK_OUTAGE
+  type: SITE
+  site_id: AZURE_HK
+- id: GLOBAL_DC_HK_OUTAGE
+  type: SITE
+  site_id: GLOBAL_DC_HK
+- id: AWS_SG_OUTAGE
+  type: SITE
+  site_id: AWS_SG
+- id: IDENTITY_FAILURE
+  type: SHARED_SERVICE
+  application_id: SHARED-ID-001
+- id: MARKET_FAILURE
+  type: SHARED_SERVICE
+  application_id: SHARED-MARKET-001

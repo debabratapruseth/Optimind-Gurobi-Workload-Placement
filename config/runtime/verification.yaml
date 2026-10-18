@@ -1,0 +1,3 @@
+version: 1
+max_raw: 200000
+max_projected: 2000

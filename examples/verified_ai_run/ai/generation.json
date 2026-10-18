@@ -1,0 +1,11 @@
+{
+  "backend": "TRANSFORMERS",
+  "finish_reason": "stop",
+  "genuine_inference": true,
+  "input_tokens": 2823,
+  "model_id": "microsoft/OptiMind-SFT",
+  "output_tokens": 427,
+  "prompt_hash": "97c8bc47f27b7fa541bcaa6163ac7d1acbac510b15ac0e06b3f57bddf7dd18a8",
+  "response_sha256": "01ca1fec3576a31110dbb1624fcfe5c9ebfb6b375c1da4921e9198b64c59ea7b",
+  "revision": "817e06666a39155f9352d00354b3227d230da46d"
+}

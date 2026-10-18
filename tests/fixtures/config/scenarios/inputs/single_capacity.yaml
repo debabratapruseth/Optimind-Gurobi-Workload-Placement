@@ -1,0 +1,22 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+mode: RESIDUAL_SHARED
+allocation_mode: SHARED_POOL
+reservation_mode: PEAK
+default_residual_per_site:
+  cpu_vcpu: 128
+  ram_gb: 512
+  gpu_count: 4
+  storage_tb: 20
+site_overrides: {}
+shared_pool:
+  oversubscription:
+    cpu_vcpu: 1.0
+    ram_gb: 1.0
+    gpu_count: 1.0
+    storage_tb: 1.0
+  require_simultaneous_peak_check: true
+capacity_expansion:
+  allow_conditional_proposal: true
+  default_lead_time_days: 60
+  cost_per_cpu_vcpu: 100

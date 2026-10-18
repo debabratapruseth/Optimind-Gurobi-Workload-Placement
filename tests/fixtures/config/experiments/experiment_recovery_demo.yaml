@@ -1,0 +1,31 @@
+# SYNTHETIC TEST ONLY: supplies fictitious recovery evidence for pipeline testing.
+version: 1
+experiment_id: EXP-SYNTHETIC-RECOVERY-DEMO
+execution_mode: INTERACTIVE
+scope: SINGLE_NEW_APPLICATION
+selected_application_ids:
+- BANK-PAY-001
+dataset: DEVELOPMENT
+portfolio_size: 25
+distribution: MODERATE_CONCENTRATION
+formulation_method: REFERENCE_MILP
+optimization_strategy: WEIGHTED
+paths:
+  sites: tests/fixtures/config/infrastructure/sites_recovery_demo.yaml
+  regulatory: tests/fixtures/config/regulatory/policies.yaml
+  applications: tests/fixtures/config/applications/new_applications.yaml
+  existing_portfolio: tests/fixtures/config/applications/existing_portfolio.yaml
+  capacity: tests/fixtures/config/capacity/capacity.yaml
+  cost: tests/fixtures/config/cost/tco.yaml
+  dependencies: tests/fixtures/config/dependencies/latency.yaml
+  objectives: tests/fixtures/config/optimization/objectives.yaml
+  solver: tests/fixtures/config/solver/gurobi.yaml
+  ai: tests/fixtures/config/ai/inference.yaml
+  dataset_generator: tests/fixtures/config/datasets/generator.yaml
+persistence:
+  save_input_snapshot: true
+  save_generated_formulations: true
+  save_solver_logs: true
+  save_validation_results: true
+  save_metrics_csv: true
+  unique_run_folder: true

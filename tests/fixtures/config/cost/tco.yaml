@@ -1,0 +1,14 @@
+version: 1
+synthetic: true
+currency: USD
+horizon_months: 36
+fx_rates_to_usd: {USD: 1.0}
+# Cost is synthetic USD/month for each allocated vCPU and fixed per-site overhead.
+per_site_monthly_fixed: {AWS_SG: 200, AWS_HK: 190, AWS_UK: 210, AZURE_HK: 200, AZURE_UK: 210, AZURE_IN: 170, GLOBAL_DC_HK: 160, GLOBAL_DC_LONDON: 170, COUNTRY_DC_IN: 150, COUNTRY_DC_LONDON: 160}
+per_vcpu_monthly: {AWS_SG: 16, AWS_HK: 15, AWS_UK: 17, AZURE_HK: 16, AZURE_UK: 17, AZURE_IN: 14, GLOBAL_DC_HK: 12, GLOBAL_DC_LONDON: 13, COUNTRY_DC_IN: 11, COUNTRY_DC_LONDON: 12}
+license_monthly_per_application: 100
+operations_monthly_per_application: 150
+include_dr_cost: true
+budget:
+  enabled: false
+  max_total_tco_usd: null

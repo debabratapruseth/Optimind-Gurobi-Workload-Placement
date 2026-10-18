@@ -1,0 +1,49 @@
+{
+  "algebra_author": "TRUSTED_COMPILER",
+  "canonical_classification": "VALID_FORMULATION",
+  "equivalence": {
+    "complete": true,
+    "examined": 2,
+    "extra_infeasible": 0,
+    "hierarchical_optimum": [
+      1.0,
+      0.75,
+      25.0,
+      111744.0
+    ],
+    "hierarchical_order": [
+      "blast_radius",
+      "concentration",
+      "latency",
+      "tco"
+    ],
+    "metric_mismatches": 0,
+    "missing_feasible": 0,
+    "normalization_ranges": {
+      "blast_radius": [
+        1.0,
+        1.0
+      ],
+      "concentration": [
+        0.75,
+        1.0
+      ],
+      "latency": [
+        5.0,
+        25.0
+      ],
+      "tco": [
+        102240.0,
+        111744.0
+      ]
+    },
+    "objective_mismatches": 0,
+    "projected_assignments": 2,
+    "raw_assignments": 10000,
+    "reference_feasible_count": 2,
+    "reference_objective": 0.2
+  },
+  "expanded_ir_hash": "ce975e411ee3e082cc1fc2aa3097ec0051178ab7649b5c7f49cf277304c377eb",
+  "specification_hash": "eb1b47c9bb8dac7c53fb5b1bc820d0c1fb723885c23306bc496731de0d5b874a",
+  "status": "BOUNDED_EQUIVALENT_TRUSTED_EXPANSION"
+}

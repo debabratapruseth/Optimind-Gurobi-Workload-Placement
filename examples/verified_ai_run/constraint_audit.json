@@ -1,0 +1,1174 @@
+{
+  "ai": {
+    "fallback_reason": null,
+    "fallback_used": false,
+    "formulation": {
+      "ai_role": "FORMULATION_SELECTION",
+      "algebra_author": "TRUSTED_COMPILER",
+      "constraints": 111,
+      "expanded_ir_hash": "ce975e411ee3e082cc1fc2aa3097ec0051178ab7649b5c7f49cf277304c377eb",
+      "policy_source": "IMMUTABLE_PROBLEM_CONTRACT",
+      "specification": {
+        "application_id": "BANK-PAY-001",
+        "environment_order": [
+          "PROD",
+          "DEV",
+          "SIT",
+          "UAT"
+        ],
+        "formulation": "DIRECT_ASSIGNMENT",
+        "objective_encoding": "INLINE",
+        "problem_hash": "093f4113ffb801c1a46f51f97aa6ac58d17b29c020b3806fe0cedeb3133a602d",
+        "spec_version": "1.0"
+      },
+      "variables": 21
+    },
+    "genuine_optimind_inference": true,
+    "invocation_evidence": "Recorded genuine generation",
+    "mode": "AI_ASSISTED",
+    "model": {
+      "model_id": "microsoft/OptiMind-SFT",
+      "precision": "BF16",
+      "provider": "HUGGINGFACE",
+      "quantization": "NONE",
+      "revision": "817e06666a39155f9352d00354b3227d230da46d",
+      "trust_remote_code": false
+    },
+    "source": "OPTIMIND_SPEC_TRUSTED_MILP"
+  },
+  "alternatives": {
+    "budget_rejection_count": 0,
+    "capacity_rejection_count": 0,
+    "capacity_rejection_examples": [],
+    "display_limit_applies": true,
+    "displayed_alternatives": [
+      {
+        "classification": "FEASIBLE_LOWER_RANKED",
+        "metrics": {
+          "blast_radius": 1.0,
+          "concentration": 0.75,
+          "latency": 25.0,
+          "tco": 111744.0
+        },
+        "normalized_objective": 0.6,
+        "placement": {
+          "application_id": "BANK-PAY-001",
+          "dr_site_id": "AWS_SG",
+          "environments": {
+            "DEV": "AWS_HK",
+            "PROD": "AWS_SG",
+            "SIT": "AWS_HK",
+            "UAT": "AWS_HK"
+          },
+          "failure_domain_contract": "INDEPENDENT_LOCAL_DOMAINS"
+        },
+        "score_delta": 0.39999999999999997,
+        "tradeoff_vs_selected": {
+          "blast_radius": 0.0,
+          "concentration": -0.25,
+          "latency": 20.0,
+          "tco": 9504.0
+        }
+      }
+    ],
+    "enumeration_complete": true,
+    "feasible_count_including_selected": 2,
+    "global_rejections": [],
+    "not_evaluated_reason": null,
+    "scope": "Site screening is not full-placement ranking. Examples may be truncated; unlisted combinations have no invented rejection reason.",
+    "site_screening": [
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "AWS_UK"
+      },
+      {
+        "classification": "LOCAL_CHECKS_PASSED_NOT_A_COMPLETE_PLACEMENT",
+        "environment": "PROD",
+        "reasons": [],
+        "site": "AWS_SG"
+      },
+      {
+        "classification": "LOCAL_CHECKS_PASSED_NOT_A_COMPLETE_PLACEMENT",
+        "environment": "PROD",
+        "reasons": [],
+        "site": "AWS_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "PROD",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AWS_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "NONPROD_REQUIRES_HK"
+        ],
+        "site": "AWS_SG"
+      },
+      {
+        "classification": "LOCAL_CHECKS_PASSED_NOT_A_COMPLETE_PLACEMENT",
+        "environment": "DEV",
+        "reasons": [],
+        "site": "AWS_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "DEV",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AWS_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "NONPROD_REQUIRES_HK"
+        ],
+        "site": "AWS_SG"
+      },
+      {
+        "classification": "LOCAL_CHECKS_PASSED_NOT_A_COMPLETE_PLACEMENT",
+        "environment": "SIT",
+        "reasons": [],
+        "site": "AWS_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "SIT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AWS_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "NONPROD_REQUIRES_HK"
+        ],
+        "site": "AWS_SG"
+      },
+      {
+        "classification": "LOCAL_CHECKS_PASSED_NOT_A_COMPLETE_PLACEMENT",
+        "environment": "UAT",
+        "reasons": [],
+        "site": "AWS_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_UK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "AZURE_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_HK"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "GLOBAL_DC_LONDON"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_IN"
+      },
+      {
+        "classification": "HARD_INFEASIBLE",
+        "environment": "UAT",
+        "reasons": [
+          "MISSING_LATENCY_EVIDENCE",
+          "NONPROD_REQUIRES_HK",
+          "POLICY_DENIAL"
+        ],
+        "site": "COUNTRY_DC_LONDON"
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "actual": true,
+      "configured_rule": "Site must be approved",
+      "constraint": "site_approval",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": true,
+      "scope": "PROD",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "hosting_country": "HK",
+        "processing_country": "HK",
+        "processing_country_defaulted": true,
+        "provider": "AWS"
+      },
+      "configured_rule": {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "constraint": "residency_and_policy",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/regulatory.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "scope": "PROD",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING",
+        "AI_ML"
+      ],
+      "configured_rule": "All required services available",
+      "constraint": "services",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ],
+      "scope": "PROD",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "p95_ms": 5.0,
+        "target_site": "AWS_HK"
+      },
+      "configured_rule": "Configured edge exists and p95 <= maximum",
+      "constraint": "dependency_latency",
+      "evidence_source": [
+        "input_snapshot/dependencies.yaml",
+        "input_snapshot/existing_portfolio.yaml"
+      ],
+      "requirement": {
+        "max_p95_latency_ms": 30.0,
+        "target": "SHARED-ID-001"
+      },
+      "scope": "PROD",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "configured_rule": "Site must be approved",
+      "constraint": "site_approval",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": true,
+      "scope": "DEV",
+      "status": "PASS"
+    },
+    {
+      "actual": "HK",
+      "configured_rule": "Nonproduction requires HK",
+      "constraint": "environment",
+      "evidence_source": "src/validation.py:validate",
+      "requirement": "HK",
+      "scope": "DEV",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "hosting_country": "HK",
+        "processing_country": "HK",
+        "processing_country_defaulted": true,
+        "provider": "AWS"
+      },
+      "configured_rule": {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "constraint": "residency_and_policy",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/regulatory.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "scope": "DEV",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING",
+        "AI_ML"
+      ],
+      "configured_rule": "All required services available",
+      "constraint": "services",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ],
+      "scope": "DEV",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "p95_ms": 5.0,
+        "target_site": "AWS_HK"
+      },
+      "configured_rule": "Configured edge exists and p95 <= maximum",
+      "constraint": "dependency_latency",
+      "evidence_source": [
+        "input_snapshot/dependencies.yaml",
+        "input_snapshot/existing_portfolio.yaml"
+      ],
+      "requirement": {
+        "max_p95_latency_ms": 30.0,
+        "target": "SHARED-ID-001"
+      },
+      "scope": "DEV",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "configured_rule": "Site must be approved",
+      "constraint": "site_approval",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": true,
+      "scope": "SIT",
+      "status": "PASS"
+    },
+    {
+      "actual": "HK",
+      "configured_rule": "Nonproduction requires HK",
+      "constraint": "environment",
+      "evidence_source": "src/validation.py:validate",
+      "requirement": "HK",
+      "scope": "SIT",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "hosting_country": "HK",
+        "processing_country": "HK",
+        "processing_country_defaulted": true,
+        "provider": "AWS"
+      },
+      "configured_rule": {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "constraint": "residency_and_policy",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/regulatory.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "scope": "SIT",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING",
+        "AI_ML"
+      ],
+      "configured_rule": "All required services available",
+      "constraint": "services",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ],
+      "scope": "SIT",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "p95_ms": 5.0,
+        "target_site": "AWS_HK"
+      },
+      "configured_rule": "Configured edge exists and p95 <= maximum",
+      "constraint": "dependency_latency",
+      "evidence_source": [
+        "input_snapshot/dependencies.yaml",
+        "input_snapshot/existing_portfolio.yaml"
+      ],
+      "requirement": {
+        "max_p95_latency_ms": 30.0,
+        "target": "SHARED-ID-001"
+      },
+      "scope": "SIT",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "configured_rule": "Site must be approved",
+      "constraint": "site_approval",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": true,
+      "scope": "UAT",
+      "status": "PASS"
+    },
+    {
+      "actual": "HK",
+      "configured_rule": "Nonproduction requires HK",
+      "constraint": "environment",
+      "evidence_source": "src/validation.py:validate",
+      "requirement": "HK",
+      "scope": "UAT",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "hosting_country": "HK",
+        "processing_country": "HK",
+        "processing_country_defaulted": true,
+        "provider": "AWS"
+      },
+      "configured_rule": {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "constraint": "residency_and_policy",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/regulatory.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "scope": "UAT",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING",
+        "AI_ML"
+      ],
+      "configured_rule": "All required services available",
+      "constraint": "services",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ],
+      "scope": "UAT",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "p95_ms": 5.0,
+        "target_site": "AWS_HK"
+      },
+      "configured_rule": "Configured edge exists and p95 <= maximum",
+      "constraint": "dependency_latency",
+      "evidence_source": [
+        "input_snapshot/dependencies.yaml",
+        "input_snapshot/existing_portfolio.yaml"
+      ],
+      "requirement": {
+        "max_p95_latency_ms": 30.0,
+        "target": "SHARED-ID-001"
+      },
+      "scope": "UAT",
+      "status": "PASS"
+    },
+    {
+      "actual": true,
+      "configured_rule": "Site must be approved",
+      "constraint": "site_approval",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": true,
+      "scope": "DR",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "hosting_country": "HK",
+        "processing_country": "HK",
+        "processing_country_defaulted": true,
+        "provider": "AWS"
+      },
+      "configured_rule": {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "constraint": "residency_and_policy",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/regulatory.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      "scope": "DR",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING",
+        "AI_ML"
+      ],
+      "configured_rule": "All required services available",
+      "constraint": "services",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ],
+      "scope": "DR",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "p95_ms": 5.0,
+        "target_site": "AWS_HK"
+      },
+      "configured_rule": "Configured edge exists and p95 <= maximum",
+      "constraint": "dependency_latency",
+      "evidence_source": [
+        "input_snapshot/dependencies.yaml",
+        "input_snapshot/existing_portfolio.yaml"
+      ],
+      "requirement": {
+        "max_p95_latency_ms": 30.0,
+        "target": "SHARED-ID-001"
+      },
+      "scope": "DR",
+      "status": "PASS"
+    },
+    {
+      "actual": 512.0,
+      "configured_rule": "Both aggregate loads <= residual capacity (includes DR)",
+      "constraint": "capacity",
+      "evidence_source": [
+        "input_snapshot/capacity.yaml",
+        "recommendation.json#independent_validation"
+      ],
+      "requirement": {
+        "reserved": 160.0,
+        "simultaneous_peak": 160.0
+      },
+      "scope": "AWS_HK:cpu_vcpu",
+      "status": "PASS"
+    },
+    {
+      "actual": 2048.0,
+      "configured_rule": "Both aggregate loads <= residual capacity (includes DR)",
+      "constraint": "capacity",
+      "evidence_source": [
+        "input_snapshot/capacity.yaml",
+        "recommendation.json#independent_validation"
+      ],
+      "requirement": {
+        "reserved": 640.0,
+        "simultaneous_peak": 640.0
+      },
+      "scope": "AWS_HK:ram_gb",
+      "status": "PASS"
+    },
+    {
+      "actual": 8.0,
+      "configured_rule": "Both aggregate loads <= residual capacity (includes DR)",
+      "constraint": "capacity",
+      "evidence_source": [
+        "input_snapshot/capacity.yaml",
+        "recommendation.json#independent_validation"
+      ],
+      "requirement": {
+        "reserved": 0.0,
+        "simultaneous_peak": 0.0
+      },
+      "scope": "AWS_HK:gpu_count",
+      "status": "PASS"
+    },
+    {
+      "actual": 100.0,
+      "configured_rule": "Both aggregate loads <= residual capacity (includes DR)",
+      "constraint": "capacity",
+      "evidence_source": [
+        "input_snapshot/capacity.yaml",
+        "recommendation.json#independent_validation"
+      ],
+      "requirement": {
+        "reserved": 10.0,
+        "simultaneous_peak": 10.0
+      },
+      "scope": "AWS_HK:storage_tb",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "failure_domain_contract": "INDEPENDENT_LOCAL_DOMAINS",
+        "ha_verified": true,
+        "independent_failure_domains": 2,
+        "site": "AWS_HK"
+      },
+      "configured_rule": "Same site/provider/region, independent local domains; DR loads included in capacity",
+      "constraint": "dedicated_local_dr",
+      "evidence_source": [
+        "input_snapshot/applications.yaml",
+        "input_snapshot/sites.yaml"
+      ],
+      "requirement": {
+        "cpu_ratio": 1.0,
+        "gpu_ratio": 1.0,
+        "mode": "DEDICATED",
+        "ram_ratio": 1.0,
+        "rpo_minutes": 15.0,
+        "rto_minutes": 60.0,
+        "storage_ratio": 1.0
+      },
+      "scope": "DR",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "rpo_minutes": 5.0,
+        "rto_minutes": 30.0,
+        "scaling_verified": true,
+        "verified": true
+      },
+      "configured_rule": "Verified RTO/RPO <= requested; reduced DR requires verified scaling",
+      "constraint": "recovery",
+      "evidence_source": "input_snapshot/sites.yaml",
+      "requirement": {
+        "cpu_ratio": 1.0,
+        "gpu_ratio": 1.0,
+        "mode": "DEDICATED",
+        "ram_ratio": 1.0,
+        "rpo_minutes": 15.0,
+        "rto_minutes": 60.0,
+        "storage_ratio": 1.0
+      },
+      "scope": "PROD/DR",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "approval_required": true,
+        "approval_status": "APPROVED",
+        "lead_time_days": 30
+      },
+      "configured_rule": "Required approval must be APPROVED",
+      "constraint": "materiality_approval",
+      "evidence_source": "input_snapshot/regulatory.yaml",
+      "requirement": "MATERIAL",
+      "scope": "BANK-PAY-001",
+      "status": "PASS"
+    },
+    {
+      "actual": 102240.0,
+      "configured_rule": "TCO <= enabled budget",
+      "constraint": "budget",
+      "evidence_source": "input_snapshot/cost.yaml",
+      "requirement": {
+        "enabled": false,
+        "max_total_tco_usd": null
+      },
+      "scope": "BANK-PAY-001",
+      "status": "NOT_APPLICABLE"
+    }
+  ],
+  "independent_validation": {
+    "independent_metrics": {
+      "blast_radius": 1.0,
+      "concentration": 1.0,
+      "latency": 5.0,
+      "tco": 102240.0
+    },
+    "independent_tco": 102240.0,
+    "reasons": [],
+    "reserved_capacity": {
+      "AWS_HK": {
+        "cpu_vcpu": 160.0,
+        "gpu_count": 0.0,
+        "ram_gb": 640.0,
+        "storage_tb": 10.0
+      }
+    },
+    "simultaneous_peak_capacity": {
+      "AWS_HK": {
+        "cpu_vcpu": 160.0,
+        "gpu_count": 0.0,
+        "ram_gb": 640.0,
+        "storage_tb": 10.0
+      }
+    },
+    "status": "DEPLOYABLE",
+    "valid": true
+  },
+  "input_hashes": {
+    "ai": "42dba1c801f172297b775f7ec2cb1983502b43bef147a047d3d83f60494f4d3b",
+    "applications": "8c8cdfb19da4c312af03ef3569ac517056c7b17b63119428cf2b90fdac779d69",
+    "capacity": "d7b599b19de0fd8e02355846bbde406f2ee500221fc331ec93366f5555e773e5",
+    "cost": "c0620f0f0b34120a708e0beaf8a77e3560d9fa859bc467de7100b419bf29325e",
+    "dataset_generator": "a0e97ce79ed0834d498f31b6478e0abf8cb3b1811256076cac53ebd8ee8425bc",
+    "dependencies": "b2c21fc7d7656c2ec0ae41262b565b1c60990717ea9dffce7cec997700c1a714",
+    "existing_portfolio": "a8ef47c2f8eb196de43b1d30d94e292db69ff1d975ea8956c7d035154e857193",
+    "experiment": "e07707da3bd52d30f17f94822b0b689ddfd94dd7828aa91a74e782294b512b28",
+    "objectives": "b57499f53edf74c04a95b2b7e934bbcd0a40fc8401619732bbbffa546c0dd15d",
+    "regulatory": "e4a2bfa93ed7fa75dbb74e8ddbe91f52b08436fd4b31df95f776338bf39be5ac",
+    "sites": "de65e09f802569c4290f07262a3b473cc23438450034791026560e980e3ba405",
+    "solver": "aa7c94f73a097a0da4dde39c780d54e4db5fbc2deb38a29dc2aa5e056d9cc1da"
+  },
+  "objective": {
+    "components": {
+      "blast_radius": {
+        "contribution": 0.0,
+        "normalized": 0.0
+      },
+      "concentration": {
+        "contribution": 0.2,
+        "normalized": 1.0
+      },
+      "latency": {
+        "contribution": 0.0,
+        "normalized": 0.0
+      },
+      "tco": {
+        "contribution": 0.0,
+        "normalized": 0.0
+      }
+    },
+    "metrics": {
+      "blast_radius": 1.0,
+      "concentration": 1.0,
+      "latency": 5.0,
+      "tco": 102240.0
+    },
+    "normalization_basis": "Pre-budget feasible extrema; constant components normalize to zero",
+    "ranges": {
+      "blast_radius": [
+        1.0,
+        1.0
+      ],
+      "concentration": [
+        0.75,
+        1.0
+      ],
+      "latency": [
+        5.0,
+        25.0
+      ],
+      "tco": [
+        102240.0,
+        111744.0
+      ]
+    },
+    "score": 0.2,
+    "weights": {
+      "blast_radius": 0.2,
+      "concentration": 0.2,
+      "latency": 0.25,
+      "tco": 0.35
+    }
+  },
+  "scope": "Configured synthetic policy only; not external regulatory approval.",
+  "selected": [
+    {
+      "application": "BANK-PAY-001",
+      "country": "HK",
+      "environment": "PROD",
+      "provider": "AWS",
+      "region": "HK",
+      "site": "AWS_HK"
+    },
+    {
+      "application": "BANK-PAY-001",
+      "country": "HK",
+      "environment": "DEV",
+      "provider": "AWS",
+      "region": "HK",
+      "site": "AWS_HK"
+    },
+    {
+      "application": "BANK-PAY-001",
+      "country": "HK",
+      "environment": "SIT",
+      "provider": "AWS",
+      "region": "HK",
+      "site": "AWS_HK"
+    },
+    {
+      "application": "BANK-PAY-001",
+      "country": "HK",
+      "environment": "UAT",
+      "provider": "AWS",
+      "region": "HK",
+      "site": "AWS_HK"
+    },
+    {
+      "application": "BANK-PAY-001",
+      "country": "HK",
+      "environment": "DR",
+      "provider": "AWS",
+      "region": "HK",
+      "site": "AWS_HK"
+    }
+  ],
+  "solver": {
+    "best_bound": 0.20000000000000107,
+    "incumbent": 0.20000000000000107,
+    "license": "FREE_SIZE_LIMITED",
+    "license_verified_from_startup_log": true,
+    "mip_gap": 0.0,
+    "model_counts": {
+      "general_constraints": 0,
+      "linear_constraints": 111,
+      "quadratic_constraints": 0,
+      "quadratic_objective_terms": 0,
+      "sos_constraints": 0,
+      "variables": 21
+    },
+    "optimality_proven": true,
+    "runtime_seconds": 0.0002570152282714844,
+    "solution_count": 1,
+    "status": "OPTIMAL",
+    "status_code": 2
+  },
+  "status": "RECOMMENDED",
+  "version": 1
+}

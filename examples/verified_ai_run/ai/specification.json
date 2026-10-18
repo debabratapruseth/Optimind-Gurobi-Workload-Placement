@@ -1,0 +1,13 @@
+{
+  "application_id": "BANK-PAY-001",
+  "environment_order": [
+    "PROD",
+    "DEV",
+    "SIT",
+    "UAT"
+  ],
+  "formulation": "DIRECT_ASSIGNMENT",
+  "objective_encoding": "INLINE",
+  "problem_hash": "093f4113ffb801c1a46f51f97aa6ac58d17b29c020b3806fe0cedeb3133a602d",
+  "spec_version": "1.0"
+}

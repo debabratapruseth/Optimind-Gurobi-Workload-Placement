@@ -1,0 +1,22 @@
+# Runtime outputs are deliberately separate from the immutable evidence bundle.
+/results/
+/packaging_validation/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.model_cache/
+.cache/
+.env
+.env.*
+*.lic
+.gurobi/
+.placement-launch.lock
+.notebook_inference.lock
+# Keep diagnostic formats available for explicitly curated test fixtures.
+
+# Notebook/editor runtime caches; keep config/runtime templates and examples public.
+.ipynb_checkpoints/
+!.env.example

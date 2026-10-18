@@ -1,0 +1,14 @@
+version: 1
+mode: RESIDUAL_SHARED
+allocation_mode: DEDICATED
+reservation_mode: PEAK
+# Example residual capacity AFTER existing portfolio. Values synthetic.
+default_residual_per_site: {cpu_vcpu: 512, ram_gb: 2048, gpu_count: 8, storage_tb: 100}
+site_overrides: {}
+shared_pool:
+  oversubscription: {cpu_vcpu: 1.0, ram_gb: 1.0, gpu_count: 1.0, storage_tb: 1.0}
+  require_simultaneous_peak_check: true
+capacity_expansion:
+  allow_conditional_proposal: true
+  default_lead_time_days: 60
+  cost_per_cpu_vcpu: 100

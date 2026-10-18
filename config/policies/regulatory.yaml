@@ -1,0 +1,22 @@
+version: 1
+synthetic_internal_bank_policy: true
+missing_policy_action: BLOCK
+# Illustrative bank-specific restrictions; NOT a statement of SG/HK/IN/UK law.
+policies:
+  - data_country: SG
+    classification: CONFIDENTIAL_PII
+    approved_providers: [AWS]
+    approved_hosting_countries: [SG, HK]
+    approved_processing_countries: [SG, HK]
+  - data_country: HK
+    classification: INTERNAL
+    approved_providers: [AWS, AZURE, GLOBAL_DC]
+    approved_hosting_countries: [HK]
+    approved_processing_countries: [HK]
+materiality:
+  MATERIAL:
+    approval_required: true
+    approval_status: APPROVED  # change to PENDING to test CONDITIONAL
+    lead_time_days: 30
+  NON_MATERIAL:
+    approval_required: false

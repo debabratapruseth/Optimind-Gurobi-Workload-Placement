@@ -1,0 +1,9 @@
+version: 1
+benchmark: tests/fixtures/config/scenarios/single.yaml
+mode: REFERENCE_FALLBACK
+ai_config: tests/fixtures/config/demo/optimind.yaml
+allow_reference_fallback: false
+reference_reason: Explicit local reference demonstration; OptiMind was not invoked.
+max_alternatives: 3
+max_explanation_assignments: 10000
+formulation_interface: COMPACT_SPEC

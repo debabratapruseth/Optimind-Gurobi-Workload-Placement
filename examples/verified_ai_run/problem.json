@@ -1,0 +1,495 @@
+{
+  "applications": [
+    {
+      "business_domain": "PAYMENTS",
+      "criticality": "CRITICAL",
+      "data_requirements": [
+        {
+          "classification": "CONFIDENTIAL_PII",
+          "data_country": "SG"
+        }
+      ],
+      "demand": {
+        "cpu_vcpu": 32.0,
+        "gpu_count": 0.0,
+        "ram_gb": 128.0,
+        "storage_tb": 2.0
+      },
+      "demand_mode": "FIXED",
+      "dependencies": [
+        {
+          "max_p95_latency_ms": 30.0,
+          "target": "SHARED-ID-001"
+        }
+      ],
+      "dr": {
+        "cpu_ratio": 1.0,
+        "gpu_ratio": 1.0,
+        "mode": "DEDICATED",
+        "ram_ratio": 1.0,
+        "rpo_minutes": 15.0,
+        "rto_minutes": 60.0,
+        "storage_ratio": 1.0
+      },
+      "environments": [
+        "PROD",
+        "DEV",
+        "SIT",
+        "UAT"
+      ],
+      "id": "BANK-PAY-001",
+      "materiality": "MATERIAL",
+      "peak_demand": null,
+      "required_service_categories": [
+        "COMPUTE",
+        "DATABASE",
+        "STORAGE",
+        "MESSAGING",
+        "NETWORKING"
+      ]
+    }
+  ],
+  "capacity": {
+    "allocation_mode": "DEDICATED",
+    "capacity_expansion": {
+      "allow_conditional_proposal": true,
+      "cost_per_cpu_vcpu": 100.0,
+      "default_lead_time_days": 60
+    },
+    "default_residual_per_site": {
+      "cpu_vcpu": 512.0,
+      "gpu_count": 8.0,
+      "ram_gb": 2048.0,
+      "storage_tb": 100.0
+    },
+    "mode": "RESIDUAL_SHARED",
+    "reservation_mode": "PEAK",
+    "shared_pool": {
+      "oversubscription": {
+        "cpu_vcpu": 1.0,
+        "gpu_count": 1.0,
+        "ram_gb": 1.0,
+        "storage_tb": 1.0
+      },
+      "require_simultaneous_peak_check": true
+    },
+    "site_overrides": {},
+    "version": 1
+  },
+  "contract_version": "1.0",
+  "cost": {
+    "budget": {
+      "enabled": false,
+      "max_total_tco_usd": null
+    },
+    "currency": "USD",
+    "fx_rates_to_usd": {
+      "USD": 1.0
+    },
+    "horizon_months": 36,
+    "include_dr_cost": true,
+    "license_monthly_per_application": 100.0,
+    "operations_monthly_per_application": 150.0,
+    "per_site_monthly_fixed": {
+      "AWS_HK": 190.0,
+      "AWS_SG": 200.0,
+      "AWS_UK": 210.0,
+      "AZURE_HK": 200.0,
+      "AZURE_IN": 170.0,
+      "AZURE_UK": 210.0,
+      "COUNTRY_DC_IN": 150.0,
+      "COUNTRY_DC_LONDON": 160.0,
+      "GLOBAL_DC_HK": 160.0,
+      "GLOBAL_DC_LONDON": 170.0
+    },
+    "per_vcpu_monthly": {
+      "AWS_HK": 15.0,
+      "AWS_SG": 16.0,
+      "AWS_UK": 17.0,
+      "AZURE_HK": 16.0,
+      "AZURE_IN": 14.0,
+      "AZURE_UK": 17.0,
+      "COUNTRY_DC_IN": 11.0,
+      "COUNTRY_DC_LONDON": 12.0,
+      "GLOBAL_DC_HK": 12.0,
+      "GLOBAL_DC_LONDON": 13.0
+    },
+    "synthetic": true,
+    "version": 1
+  },
+  "dependencies": {
+    "failure_scenarios": [
+      {
+        "application_id": null,
+        "id": "AWS_HK_REGION_OUTAGE",
+        "site_id": "AWS_HK",
+        "type": "SITE"
+      },
+      {
+        "application_id": "SHARED-ID-001",
+        "id": "SHARED_IDENTITY_FAILURE",
+        "site_id": null,
+        "type": "SHARED_SERVICE"
+      }
+    ],
+    "latency_matrix_ms": {
+      "AWS_HK": {
+        "AWS_HK": 5.0,
+        "AWS_SG": 25.0
+      },
+      "AWS_SG": {
+        "AWS_HK": 25.0,
+        "AWS_SG": 5.0
+      },
+      "AZURE_HK": {
+        "AWS_HK": 10.0
+      },
+      "GLOBAL_DC_HK": {
+        "AWS_HK": 12.0
+      }
+    },
+    "metric": "P95_MS",
+    "missing_latency_action": "BLOCK",
+    "synthetic": true,
+    "version": 1
+  },
+  "fixed_portfolio": [
+    {
+      "business_domain": "CORE_BANKING",
+      "criticality": "CRITICAL",
+      "demand": {
+        "cpu_vcpu": 16.0,
+        "gpu_count": 0.0,
+        "ram_gb": 64.0,
+        "storage_tb": 1.0
+      },
+      "dependencies": [],
+      "id": "SHARED-ID-001",
+      "service_type": "IDENTITY",
+      "site_id": "AWS_HK"
+    },
+    {
+      "business_domain": "RISK_ANALYTICS",
+      "criticality": "NON_CRITICAL",
+      "demand": {
+        "cpu_vcpu": 24.0,
+        "gpu_count": 0.0,
+        "ram_gb": 96.0,
+        "storage_tb": 2.0
+      },
+      "dependencies": [],
+      "id": "LEGACY-RISK-001",
+      "service_type": null,
+      "site_id": "AWS_SG"
+    }
+  ],
+  "objectives": {
+    "hierarchical_order": [
+      "feasibility",
+      "blast_radius",
+      "concentration",
+      "latency",
+      "tco"
+    ],
+    "infeasibility": {
+      "allow_regulatory_relaxation": false,
+      "remediation_analysis": true,
+      "strict_first": true
+    },
+    "normalization": "MIN_MAX",
+    "pareto": {
+      "enabled": false,
+      "max_candidates": 10
+    },
+    "strategy": "WEIGHTED",
+    "version": 1,
+    "weights": {
+      "blast_radius": 0.2,
+      "concentration": 0.2,
+      "latency": 0.25,
+      "tco": 0.35
+    }
+  },
+  "regulatory": {
+    "materiality": {
+      "MATERIAL": {
+        "approval_required": true,
+        "approval_status": "APPROVED",
+        "lead_time_days": 30
+      },
+      "NON_MATERIAL": {
+        "approval_required": false,
+        "approval_status": null,
+        "lead_time_days": 0
+      }
+    },
+    "missing_policy_action": "BLOCK",
+    "policies": [
+      {
+        "approved_hosting_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "SG",
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS"
+        ],
+        "classification": "CONFIDENTIAL_PII",
+        "data_country": "SG"
+      },
+      {
+        "approved_hosting_countries": [
+          "HK"
+        ],
+        "approved_processing_countries": [
+          "HK"
+        ],
+        "approved_providers": [
+          "AWS",
+          "AZURE",
+          "GLOBAL_DC"
+        ],
+        "classification": "INTERNAL",
+        "data_country": "HK"
+      }
+    ],
+    "synthetic_internal_bank_policy": true,
+    "version": 1
+  },
+  "requirement_ids": [
+    "regulatory",
+    "services",
+    "recovery_resilience",
+    "approvals",
+    "placement",
+    "capacity",
+    "dr",
+    "dependency_latency",
+    "tco",
+    "budget",
+    "concentration",
+    "blast_radius",
+    "objective"
+  ],
+  "semantics": {
+    "approval": "pending only conditional when remediation enabled; never deployable",
+    "blast_radius": "maximum transitive critical disruption fraction; deduplicate apps; source depends on target",
+    "concentration": "mean provider/country HHI; critical apps once by PROD; empty population zero",
+    "cost": "USD; rates per month; horizon in months",
+    "latency": "maximum direct-edge p95 across new application environments",
+    "normalization": "prebudget feasible extrema; constant metric zero; weights divided by sum",
+    "reservations": "per environment; PROD plus local DR; residual after fixed portfolio; full simultaneous peak",
+    "resilience": "same site primary/DR; independent verified local domains; NONPROD in HK",
+    "resources": "cpu_vcpu,ram_GB,gpu_count,storage_TB",
+    "tco": "reserved CPU plus occupied-site overhead plus license/operations per new app, times horizon; no expansion",
+    "time": "dependency p95 milliseconds; RTO/RPO minutes"
+  },
+  "sites": {
+    "cloud_az_selection_managed_by_provider": true,
+    "service_categories_default": [
+      "COMPUTE",
+      "DATABASE",
+      "STORAGE",
+      "MESSAGING",
+      "NETWORKING",
+      "AI_ML"
+    ],
+    "service_category_overrides": {},
+    "sites": [
+      {
+        "approved": true,
+        "country": "UK",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AWS_UK",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AWS",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "UK"
+      },
+      {
+        "approved": true,
+        "country": "SG",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AWS_SG",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AWS",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "SG"
+      },
+      {
+        "approved": true,
+        "country": "HK",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AWS_HK",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AWS",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "HK"
+      },
+      {
+        "approved": true,
+        "country": "HK",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AZURE_HK",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AZURE",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "HK"
+      },
+      {
+        "approved": true,
+        "country": "UK",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AZURE_UK",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AZURE",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "UK"
+      },
+      {
+        "approved": true,
+        "country": "IN",
+        "ha_verified": true,
+        "hosting": "CLOUD",
+        "id": "AZURE_IN",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "AZURE",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "IN"
+      },
+      {
+        "approved": true,
+        "country": "HK",
+        "ha_verified": true,
+        "hosting": "ON_PREM",
+        "id": "GLOBAL_DC_HK",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "GLOBAL_DC",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "HK"
+      },
+      {
+        "approved": true,
+        "country": "UK",
+        "ha_verified": true,
+        "hosting": "ON_PREM",
+        "id": "GLOBAL_DC_LONDON",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "GLOBAL_DC",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "UK"
+      },
+      {
+        "approved": true,
+        "country": "IN",
+        "ha_verified": true,
+        "hosting": "ON_PREM",
+        "id": "COUNTRY_DC_IN",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "COUNTRY_DC",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "IN"
+      },
+      {
+        "approved": true,
+        "country": "UK",
+        "ha_verified": true,
+        "hosting": "ON_PREM",
+        "id": "COUNTRY_DC_LONDON",
+        "independent_failure_domains": 2,
+        "processing_country": null,
+        "provider": "COUNTRY_DC",
+        "recovery": {
+          "rpo_minutes": 5.0,
+          "rto_minutes": 30.0,
+          "scaling_verified": true,
+          "verified": true
+        },
+        "region": "UK"
+      }
+    ],
+    "synthetic": true,
+    "version": 1
+  },
+  "solver": {
+    "allow_quadratic_models": false,
+    "engine": "GUROBI",
+    "hard_limits": {
+      "max_linear_constraints": 2000,
+      "max_variables": 2000
+    },
+    "license": "FREE_SIZE_LIMITED",
+    "on_limit_exceeded": "REJECT_MODEL",
+    "relative_mip_gap": 0.0,
+    "safety_limits": {
+      "max_linear_constraints": 1800,
+      "max_variables": 1800
+    },
+    "seed": 42,
+    "threads": 1,
+    "time_limit_seconds": 120.0,
+    "version": 1
+  }
+}

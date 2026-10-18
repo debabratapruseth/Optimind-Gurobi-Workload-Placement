@@ -1,0 +1,25 @@
+version: 1
+applications:
+  - id: BANK-PAY-001
+    business_domain: PAYMENTS
+    criticality: CRITICAL
+    materiality: MATERIAL
+    data_requirements:
+      - {data_country: SG, classification: CONFIDENTIAL_PII}
+    environments: [PROD, DEV, SIT, UAT]
+    required_service_categories: [COMPUTE, DATABASE, STORAGE, MESSAGING, NETWORKING]
+    demand:
+      cpu_vcpu: 32
+      ram_gb: 128
+      gpu_count: 0
+      storage_tb: 2
+    dr:
+      mode: DEDICATED
+      cpu_ratio: 1.0
+      ram_ratio: 1.0
+      gpu_ratio: 1.0
+      storage_ratio: 1.0
+      rto_minutes: 60
+      rpo_minutes: 15
+    dependencies:
+      - {target: SHARED-ID-001, max_p95_latency_ms: 30}

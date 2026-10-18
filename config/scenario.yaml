@@ -1,0 +1,32 @@
+version: 1
+experiment_id: BANK-PAY-PLACEMENT
+execution_mode: INTERACTIVE
+scope: SINGLE_NEW_APPLICATION
+selected_application_ids:
+- BANK-PAY-001
+dataset: DEVELOPMENT
+portfolio_size: 2
+distribution: MODERATE_CONCENTRATION
+optimization_strategy: WEIGHTED
+paths:
+  sites: config/infrastructure/sites.yaml
+  regulatory: config/policies/regulatory.yaml
+  applications: config/application.yaml
+  existing_portfolio: config/infrastructure/portfolio.yaml
+  capacity: config/infrastructure/capacity.yaml
+  cost: config/infrastructure/costs.yaml
+  dependencies: config/policies/dependencies.yaml
+  objectives: config/optimization/objectives.yaml
+  solver: config/optimization/solver.yaml
+  ai: config/runtime/baseline_ai.yaml
+  dataset_generator: config/runtime/generator.yaml
+persistence:
+  save_input_snapshot: true
+  save_generated_formulations: true
+  save_solver_logs: true
+  save_validation_results: true
+  save_metrics_csv: true
+  unique_run_folder: true
+optimization:
+  formulation:
+    method: DIRECT_ASSIGNMENT_MILP

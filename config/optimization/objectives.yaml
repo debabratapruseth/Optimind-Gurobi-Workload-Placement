@@ -1,0 +1,12 @@
+version: 1
+strategy: WEIGHTED # WEIGHTED | HIERARCHICAL | PARETO
+weights: {tco: 0.35, latency: 0.25, concentration: 0.20, blast_radius: 0.20}
+normalization: MIN_MAX
+hierarchical_order: [feasibility, blast_radius, concentration, latency, tco]
+pareto:
+  enabled: false
+  max_candidates: 10
+infeasibility:
+  strict_first: true
+  remediation_analysis: true
+  allow_regulatory_relaxation: false

@@ -1,0 +1,35 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+applications:
+- id: TEST-APP
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: HK
+    classification: INTERNAL
+  environments:
+  - PROD
+  - DEV
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 10
+    ram_gb: 40
+    gpu_count: 0
+    storage_tb: 2
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30

@@ -1,0 +1,33 @@
+# Synthetic verification benchmark. Direct assignment, no joint enumeration.
+version: 1
+experiment_id: VERIFY-SMALL-DIRECT
+execution_mode: INTERACTIVE
+scope: SINGLE_NEW_APPLICATION
+selected_application_ids:
+- TEST-APP
+dataset: DEVELOPMENT
+portfolio_size: 5
+distribution: MODERATE_CONCENTRATION
+optimization_strategy: WEIGHTED
+paths:
+  sites: tests/fixtures/config/scenarios/inputs/sites.yaml
+  regulatory: tests/fixtures/config/scenarios/inputs/regulatory.yaml
+  applications: tests/fixtures/config/scenarios/inputs/single_applications.yaml
+  existing_portfolio: tests/fixtures/config/scenarios/inputs/portfolio.yaml
+  capacity: tests/fixtures/config/scenarios/inputs/single_capacity.yaml
+  cost: tests/fixtures/config/scenarios/inputs/cost.yaml
+  dependencies: tests/fixtures/config/scenarios/inputs/dependencies.yaml
+  objectives: tests/fixtures/config/scenarios/inputs/single_objectives.yaml
+  solver: tests/fixtures/config/scenarios/inputs/solver.yaml
+  ai: tests/fixtures/config/ai/inference.yaml
+  dataset_generator: tests/fixtures/config/scenarios/inputs/generator.yaml
+persistence:
+  save_input_snapshot: true
+  save_generated_formulations: true
+  save_solver_logs: true
+  save_validation_results: true
+  save_metrics_csv: true
+  unique_run_folder: true
+optimization:
+  formulation:
+    method: DIRECT_ASSIGNMENT_MILP

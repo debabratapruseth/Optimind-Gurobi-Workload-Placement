@@ -1,0 +1,61 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+synthetic: true
+applications:
+- id: SHARED-ID-001
+  business_domain: CORE_BANKING
+  criticality: CRITICAL
+  site_id: AWS_HK
+  service_type: IDENTITY
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dependencies: []
+- id: FIXED-LEDGER
+  business_domain: CORE_BANKING
+  criticality: CRITICAL
+  site_id: AWS_HK
+  service_type: IDENTITY
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30
+- id: FIXED-ARCHIVE
+  business_domain: CORE_BANKING
+  criticality: CRITICAL
+  site_id: AWS_HK
+  service_type: IDENTITY
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dependencies: []
+- id: SHARED-MARKET-001
+  business_domain: CORE_BANKING
+  criticality: CRITICAL
+  site_id: AZURE_HK
+  service_type: IDENTITY
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dependencies: []
+- id: FIXED-MONITOR
+  business_domain: CORE_BANKING
+  criticality: NON_CRITICAL
+  site_id: GLOBAL_DC_HK
+  service_type: IDENTITY
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dependencies: []

@@ -1,0 +1,33 @@
+version: 2
+enabled: true
+model:
+  provider: HUGGINGFACE
+  model_id: microsoft/OptiMind-SFT
+  revision: 817e06666a39155f9352d00354b3227d230da46d
+  precision: BF16
+  quantization: NONE
+  trust_remote_code: false
+inference:
+  backend: TRANSFORMERS
+  temperature: 0.9
+  top_p: 1.0
+  max_new_tokens: 8192
+  max_context_tokens: 65536
+  seed: 42
+  timeout_seconds: 1800.0
+  gpu_index: 0
+  memory_overhead_gib: 8.0
+  gpu_safety_fraction: 0.9
+  ram_weight_multiplier: 1.2
+  disk_weight_multiplier: 2.0
+generation:
+  mode: STRUCTURED_IR
+  prompt_mode: TEMPLATE_GUIDED
+  attempts: 1
+  repairs: 0
+evaluation:
+  execute_generated_python: false
+  validate_generated_ir: true
+  compare_with_reference: true
+  max_raw: 200000
+  max_projected: 2000

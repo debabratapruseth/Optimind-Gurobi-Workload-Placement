@@ -1,0 +1,171 @@
+{
+  "audit_solver_calls": {
+    "count": 23,
+    "maximum_constraints": 111,
+    "maximum_variables": 21,
+    "runtime_seconds": 0.007075309753417969
+  },
+  "classification": "VALID_FORMULATION",
+  "compilation": {
+    "model_counts": {
+      "general_constraints": 0,
+      "linear_constraints": 111,
+      "quadratic_constraints": 0,
+      "quadratic_objective_terms": 0,
+      "sos_constraints": 0,
+      "variables": 21
+    },
+    "seconds": 0.00439835800034416,
+    "status": "COMPILED"
+  },
+  "failure_classifications": [],
+  "levels": {
+    "1_schema": "PASS",
+    "2_structure": "PASS",
+    "3_fidelity": {
+      "additional_rows": [],
+      "errors": [],
+      "missing_mandatory": [],
+      "recognized": true
+    },
+    "4_solution": {
+      "independent_metrics": {
+        "blast_radius": 1.0,
+        "concentration": 1.0,
+        "latency": 5.0,
+        "tco": 102240.0
+      },
+      "independent_tco": 102240.0,
+      "reasons": [],
+      "reserved_capacity": {
+        "AWS_HK": {
+          "cpu_vcpu": 160.0,
+          "gpu_count": 0.0,
+          "ram_gb": 640.0,
+          "storage_tb": 10.0
+        }
+      },
+      "simultaneous_peak_capacity": {
+        "AWS_HK": {
+          "cpu_vcpu": 160.0,
+          "gpu_count": 0.0,
+          "ram_gb": 640.0,
+          "storage_tb": 10.0
+        }
+      },
+      "status": "DEPLOYABLE",
+      "valid": true
+    },
+    "5_equivalence": {
+      "complete": true,
+      "examined": 2,
+      "extra_infeasible": 0,
+      "hierarchical_optimum": [
+        1.0,
+        0.75,
+        25.0,
+        111744.0
+      ],
+      "hierarchical_order": [
+        "blast_radius",
+        "concentration",
+        "latency",
+        "tco"
+      ],
+      "metric_mismatches": 0,
+      "missing_feasible": 0,
+      "normalization_ranges": {
+        "blast_radius": [
+          1.0,
+          1.0
+        ],
+        "concentration": [
+          0.75,
+          1.0
+        ],
+        "latency": [
+          5.0,
+          25.0
+        ],
+        "tco": [
+          102240.0,
+          111744.0
+        ]
+      },
+      "objective_mismatches": 0,
+      "projected_assignments": 2,
+      "raw_assignments": 10000,
+      "reference_feasible_count": 2,
+      "reference_objective": 0.2
+    }
+  },
+  "metrics": {
+    "blast_radius": 1.0,
+    "concentration": 1.0,
+    "latency": 5.0,
+    "tco": 102240.0
+  },
+  "placement": {
+    "application_id": "BANK-PAY-001",
+    "dr_site_id": "AWS_HK",
+    "environments": {
+      "DEV": "AWS_HK",
+      "PROD": "AWS_HK",
+      "SIT": "AWS_HK",
+      "UAT": "AWS_HK"
+    },
+    "failure_domain_contract": "INDEPENDENT_LOCAL_DOMAINS"
+  },
+  "placement_audit": {
+    "independent_metrics": {
+      "blast_radius": 1.0,
+      "concentration": 1.0,
+      "latency": 5.0,
+      "tco": 102240.0
+    },
+    "independent_tco": 102240.0,
+    "reasons": [],
+    "reserved_capacity": {
+      "AWS_HK": {
+        "cpu_vcpu": 160.0,
+        "gpu_count": 0.0,
+        "ram_gb": 640.0,
+        "storage_tb": 10.0
+      }
+    },
+    "simultaneous_peak_capacity": {
+      "AWS_HK": {
+        "cpu_vcpu": 160.0,
+        "gpu_count": 0.0,
+        "ram_gb": 640.0,
+        "storage_tb": 10.0
+      }
+    },
+    "status": "DEPLOYABLE",
+    "valid": true
+  },
+  "reference_gap": 5.2735593669694936e-15,
+  "solver": {
+    "best_bound": 0.20000000000000107,
+    "incumbent": 0.20000000000000107,
+    "license": "FREE_SIZE_LIMITED",
+    "license_verified_from_startup_log": true,
+    "mip_gap": 0.0,
+    "model_counts": {
+      "general_constraints": 0,
+      "linear_constraints": 111,
+      "quadratic_constraints": 0,
+      "quadratic_objective_terms": 0,
+      "sos_constraints": 0,
+      "variables": 21
+    },
+    "optimality_proven": true,
+    "runtime_seconds": 0.0002570152282714844,
+    "solution_count": 1,
+    "status": "OPTIMAL",
+    "status_code": 2
+  },
+  "timings": {
+    "validation_total_seconds": 0.5791960189999372
+  }
+}

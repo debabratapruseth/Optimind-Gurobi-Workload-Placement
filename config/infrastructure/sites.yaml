@@ -1,0 +1,144 @@
+# SYNTHETIC TEST EVIDENCE ONLY. Not verified cloud or bank capabilities.
+# Used only by experiment_recovery_demo.yaml to exercise successful solves.
+version: 1
+synthetic: true
+sites:
+- id: AWS_UK
+  provider: AWS
+  region: UK
+  country: UK
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: AWS_SG
+  provider: AWS
+  region: SG
+  country: SG
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: AWS_HK
+  provider: AWS
+  region: HK
+  country: HK
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: AZURE_HK
+  provider: AZURE
+  region: HK
+  country: HK
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: AZURE_UK
+  provider: AZURE
+  region: UK
+  country: UK
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: AZURE_IN
+  provider: AZURE
+  region: IN
+  country: IN
+  hosting: CLOUD
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: GLOBAL_DC_HK
+  provider: GLOBAL_DC
+  region: HK
+  country: HK
+  hosting: ON_PREM
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: GLOBAL_DC_LONDON
+  provider: GLOBAL_DC
+  region: UK
+  country: UK
+  hosting: ON_PREM
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: COUNTRY_DC_IN
+  provider: COUNTRY_DC
+  region: IN
+  country: IN
+  hosting: ON_PREM
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+- id: COUNTRY_DC_LONDON
+  provider: COUNTRY_DC
+  region: UK
+  country: UK
+  hosting: ON_PREM
+  approved: true
+  ha_verified: true
+  independent_failure_domains: 2
+  recovery:
+    verified: true
+    rto_minutes: 30
+    rpo_minutes: 5
+    scaling_verified: true
+service_categories_default:
+- COMPUTE
+- DATABASE
+- STORAGE
+- MESSAGING
+- NETWORKING
+- AI_ML
+service_category_overrides: {}
+cloud_az_selection_managed_by_provider: true

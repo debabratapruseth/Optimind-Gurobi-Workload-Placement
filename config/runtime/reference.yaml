@@ -1,0 +1,6 @@
+version: 1
+benchmark: config/scenario.yaml
+mode: REFERENCE_FALLBACK
+ai_config: config/optimind.yaml
+allow_reference_fallback: false
+formulation_interface: COMPACT_SPEC

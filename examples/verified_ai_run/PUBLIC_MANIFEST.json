@@ -1,0 +1,18 @@
+{
+  "run_id": "demo-66c9b6ebceee4839a2202e3eb006d57e",
+  "kind": "CURATED_PUBLIC_SUBSET",
+  "files": {
+    "README.md": "2a14de4c117f21e75f0cef99d06c05e09318ed0bb3030277760a5f622f9c884f",
+    "ai/compilation_provenance.json": "27dcb883c1d25e29aa87d475435b651673a61ed1c08ef9616141a5f7fd075ebd",
+    "ai/generation.json": "27d67b1b8115998afad3d479a1671a9e1b23ef2b30791b8bbbc698921ab4cf5b",
+    "ai/spec_validation.json": "f7949490a4930913c8ac7246cc1caa81e80ea4da6650dacd37e3d5ee84a31fa7",
+    "ai/specification.json": "96932769999f2e3fb01a40e450bf00b804afb8fa4b5138947817a10a9f099b07",
+    "ai/validation/compiled/solver.json": "9d98c0b99c1592ccf8455726ea0149baf9d24146fb93fc5ec9dc03e15c276665",
+    "ai/validation/validation.json": "ecfdc46333379e855da1b1ce5f54441246ea7294d4e36d3f699df0cf8e22324c",
+    "constraint_audit.json": "c290d5b38c77ed92c8a3fdc3454abe0b0ac1f8011a3908b38e8f9109c99593ec",
+    "placement_explanation.md": "317967f9b45d4e8ccd40b04acf657f07ff192d5a9cff2d2811185d5ab2653c1a",
+    "problem.json": "628c5d4c3dadc4612ab9d10ed15951737bea2cc5ea800b87ee79e0e52431e46f",
+    "recommendation.json": "daf8c092ef99efb71af55c40b6037f572db3a5dc2c641b2e89e25905b91fcab9",
+    "verification.json": "325bb0bbc8a8bc6ef452d402378c5ea84f8d666e879e35ba6401020c9446a050"
+  }
+}

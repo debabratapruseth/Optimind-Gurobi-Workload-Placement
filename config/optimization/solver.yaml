@@ -1,0 +1,15 @@
+version: 1
+engine: GUROBI
+license: FREE_SIZE_LIMITED
+hard_limits:
+  max_variables: 2000
+  max_linear_constraints: 2000
+safety_limits:
+  max_variables: 1800
+  max_linear_constraints: 1800
+allow_quadratic_models: false
+on_limit_exceeded: REJECT_MODEL
+time_limit_seconds: 120
+relative_mip_gap: 0.0
+threads: 1
+seed: 42

@@ -1,0 +1,100 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+applications:
+- id: MEDIUM-1
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: HK
+    classification: INTERNAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30
+  - target: MEDIUM-2
+    max_p95_latency_ms: 10
+- id: MEDIUM-2
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: HK
+    classification: INTERNAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 12
+    ram_gb: 48
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30
+  - target: MEDIUM-3
+    max_p95_latency_ms: 20
+- id: MEDIUM-3
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: HK
+    classification: INTERNAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 8
+    ram_gb: 32
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30

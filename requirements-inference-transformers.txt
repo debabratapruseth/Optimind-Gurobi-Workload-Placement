@@ -1,0 +1,5 @@
+# Text-only stack. Preserve an installed torch 2.13.0 CUDA local build.
+# Do not install transformers vision extras or torchvision.
+torch==2.13.0
+transformers==5.12.1
+accelerate==1.15.0

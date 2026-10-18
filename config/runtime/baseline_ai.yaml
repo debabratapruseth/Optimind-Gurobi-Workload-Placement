@@ -1,0 +1,16 @@
+version: 1
+# AI generation is NOT enabled for milestone 1.
+enabled: false
+model: microsoft/OptiMind-SFT
+backend: COLAB_LOCAL # fallback future: REMOTE or MOCK
+modes: [AUTONOMOUS, TEMPLATE_GUIDED]
+generation:
+  attempt_modes: [SINGLE, RELIABILITY]
+  reliability_attempts: 5
+repair:
+  modes: [ZERO_REPAIR, REPAIR_ENABLED]
+  max_repair_attempts: 3
+  expose_reference_solution: false
+security:
+  execute_untrusted_python: false
+  require_structured_ir_or_isolated_sandbox: true

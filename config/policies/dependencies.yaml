@@ -1,0 +1,14 @@
+version: 1
+synthetic: true
+metric: P95_MS
+missing_latency_action: BLOCK
+# Ordered source-site -> target-site values, include every candidate edge in production dataset.
+latency_matrix_ms:
+  AWS_SG: {AWS_HK: 25, AWS_SG: 5}
+  AWS_HK: {AWS_HK: 5, AWS_SG: 25}
+  AZURE_HK: {AWS_HK: 10}
+  GLOBAL_DC_HK: {AWS_HK: 12}
+  # Other sites intentionally lack latency evidence and must be blocked.
+failure_scenarios:
+  - {id: AWS_HK_REGION_OUTAGE, type: SITE, site_id: AWS_HK}
+  - {id: SHARED_IDENTITY_FAILURE, type: SHARED_SERVICE, application_id: SHARED-ID-001}

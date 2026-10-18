@@ -1,0 +1,59 @@
+{
+  "review_date": "2026-10-17",
+  "run_id": "demo-66c9b6ebceee4839a2202e3eb006d57e",
+  "original_manifest_sha256": "68fd5945b4ccd68b706d130ebba407cb12066a5c36c542db1e759d179371ca90",
+  "original_file_count": 51,
+  "original_manifest_entries_verified": 50,
+  "checks": {
+    "all_50_manifest_entries_match": true,
+    "no_unlisted_files": true,
+    "snapshot_hashes": true,
+    "shared_result": true,
+    "markdown_exact_render_of_audit": true,
+    "explanation_consistency": true,
+    "mode_flags": true,
+    "model_identity": true,
+    "response_binding": true,
+    "spec_hash": true,
+    "ir_hash": true,
+    "problem_binding": true,
+    "optimal_deployable": true,
+    "gurobi_log": true,
+    "independent_revalidation": true,
+    "recomputed_objective": true,
+    "alternative": true,
+    "selected_sites": true,
+    "constraints": true
+  },
+  "recorded_source_hashes_match_current_source": true,
+  "solver_identity": {
+    "name": "Gurobi",
+    "version": "13.0.2",
+    "platform": "linux64",
+    "evidence": "Original ai/validation/compiled/solver.log header; log omitted because it contains an absolute runtime path."
+  },
+  "included_original_sha256": {
+    "recommendation.json": "daf8c092ef99efb71af55c40b6037f572db3a5dc2c641b2e89e25905b91fcab9",
+    "placement_explanation.md": "317967f9b45d4e8ccd40b04acf657f07ff192d5a9cff2d2811185d5ab2653c1a",
+    "constraint_audit.json": "c290d5b38c77ed92c8a3fdc3454abe0b0ac1f8011a3908b38e8f9109c99593ec",
+    "problem.json": "628c5d4c3dadc4612ab9d10ed15951737bea2cc5ea800b87ee79e0e52431e46f",
+    "ai/generation.json": "27d67b1b8115998afad3d479a1671a9e1b23ef2b30791b8bbbc698921ab4cf5b",
+    "ai/specification.json": "96932769999f2e3fb01a40e450bf00b804afb8fa4b5138947817a10a9f099b07",
+    "ai/compilation_provenance.json": "27dcb883c1d25e29aa87d475435b651673a61ed1c08ef9616141a5f7fd075ebd",
+    "ai/spec_validation.json": "f7949490a4930913c8ac7246cc1caa81e80ea4da6650dacd37e3d5ee84a31fa7",
+    "ai/validation/validation.json": "ecfdc46333379e855da1b1ce5f54441246ea7294d4e36d3f699df0cf8e22324c",
+    "ai/validation/compiled/solver.json": "9d98c0b99c1592ccf8455726ea0149baf9d24146fb93fc5ec9dc03e15c276665"
+  },
+  "limitations": [
+    "Original manifest is a local integrity record, not an external signature or independent attestation.",
+    "Separate runtime verification receipt and test logs are not included in the downloaded run; the 353-test claim cannot be independently verified from this bundle.",
+    "No separately downloaded Gurobi-only execution is included. The in-run bounded equivalence audit supplies the reference comparison.",
+    "Original demo_config.yaml retains an unused reference-mode reason string despite AI_ASSISTED mode; recommendation fallback_reason is null and fallback_used is false.",
+    "Input snapshots, raw prompts/responses, expanded IR, hardware records and logs are omitted from this minimal public subset. Relative evidence references in the copied reports refer to the complete original run.",
+    "Package/model metadata and genuine-inference records support the reported execution; weights and runtime are not bundled and inference was not rerun during this review."
+  ],
+  "privacy_review": {
+    "method": "Allowlisted files inspected; original paths and GPU identifiers excluded; token/private-key/signed-URL patterns scanned.",
+    "result": "No credential values or private runtime paths found in the included subset."
+  }
+}

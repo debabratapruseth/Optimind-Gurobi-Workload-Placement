@@ -1,0 +1,14 @@
+version: 1
+synthetic: true
+applications:
+  - id: SHARED-ID-001
+    business_domain: CORE_BANKING
+    criticality: CRITICAL
+    site_id: AWS_HK
+    service_type: IDENTITY
+    demand: {cpu_vcpu: 16, ram_gb: 64, gpu_count: 0, storage_tb: 1}
+  - id: LEGACY-RISK-001
+    business_domain: RISK_ANALYTICS
+    criticality: NON_CRITICAL
+    site_id: AWS_SG
+    demand: {cpu_vcpu: 24, ram_gb: 96, gpu_count: 0, storage_tb: 2}

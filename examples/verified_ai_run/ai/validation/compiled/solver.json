@@ -1,0 +1,20 @@
+{
+  "best_bound": 0.20000000000000107,
+  "incumbent": 0.20000000000000107,
+  "license": "FREE_SIZE_LIMITED",
+  "license_verified_from_startup_log": true,
+  "mip_gap": 0.0,
+  "model_counts": {
+    "general_constraints": 0,
+    "linear_constraints": 111,
+    "quadratic_constraints": 0,
+    "quadratic_objective_terms": 0,
+    "sos_constraints": 0,
+    "variables": 21
+  },
+  "optimality_proven": true,
+  "runtime_seconds": 0.0002570152282714844,
+  "solution_count": 1,
+  "status": "OPTIMAL",
+  "status_code": 2
+}

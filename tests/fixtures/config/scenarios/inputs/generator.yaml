@@ -1,0 +1,51 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+synthetic: true
+portfolio_sizes:
+- 5
+critical_ratio: 0.4
+application_types:
+- PAYMENTS
+- CORE_BANKING
+- RISK_ANALYTICS
+- REGULATORY_REPORTING
+- FRAUD_DETECTION
+- AI_ML
+distributions:
+- UNIFORM
+- MODERATE_CONCENTRATION
+- HIGH_CONCENTRATION
+splits:
+  DEVELOPMENT:
+    seed: 1042
+    allow_tuning: true
+  VALIDATION:
+    seed: 2042
+    allow_tuning: true
+  HELD_OUT_TEST:
+    seed: 3042
+    allow_tuning: false
+ensure_generated_portfolio_policy_feasible: true
+templates:
+- business_domain: CORE_BANKING
+  data_requirements:
+  - data_country: HK
+    classification: INTERNAL
+  demand:
+    cpu_vcpu: 16
+    ram_gb: 64
+    gpu_count: 0
+    storage_tb: 1
+distribution_site_weights:
+  UNIFORM:
+    AWS_HK: 1
+    AZURE_HK: 1
+    GLOBAL_DC_HK: 1
+  MODERATE_CONCENTRATION:
+    AWS_HK: 3
+    AZURE_HK: 2
+    GLOBAL_DC_HK: 1
+  HIGH_CONCENTRATION:
+    AWS_HK: 8
+    AZURE_HK: 1
+    GLOBAL_DC_HK: 1

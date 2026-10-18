@@ -1,0 +1,161 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+applications:
+- id: COMPLEX-1
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: SG
+    classification: BENCH_CONFIDENTIAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 12
+    ram_gb: 48
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-ID-001
+    max_p95_latency_ms: 30
+- id: COMPLEX-2
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: SG
+    classification: BENCH_CONFIDENTIAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 10
+    ram_gb: 40
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: COMPLEX-1
+    max_p95_latency_ms: 20
+- id: COMPLEX-3
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: SG
+    classification: BENCH_CONFIDENTIAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 8
+    ram_gb: 32
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: SHARED-MARKET-001
+    max_p95_latency_ms: 30
+- id: COMPLEX-4
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: SG
+    classification: BENCH_CONFIDENTIAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  demand:
+    cpu_vcpu: 6
+    ram_gb: 24
+    gpu_count: 0
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: COMPLEX-3
+    max_p95_latency_ms: 20
+- id: COMPLEX-5
+  business_domain: PAYMENTS
+  criticality: CRITICAL
+  materiality: MATERIAL
+  data_requirements:
+  - data_country: SG
+    classification: BENCH_CONFIDENTIAL
+  environments:
+  - PROD
+  required_service_categories:
+  - COMPUTE
+  - DATABASE
+  - STORAGE
+  - MESSAGING
+  - NETWORKING
+  - AI_ML
+  demand:
+    cpu_vcpu: 4
+    ram_gb: 16
+    gpu_count: 1
+    storage_tb: 1
+  dr:
+    mode: DEDICATED
+    cpu_ratio: 1.0
+    ram_ratio: 1.0
+    gpu_ratio: 1.0
+    storage_ratio: 1.0
+    rto_minutes: 60
+    rpo_minutes: 15
+  dependencies:
+  - target: COMPLEX-2
+    max_p95_latency_ms: 30
+  - target: COMPLEX-4
+    max_p95_latency_ms: 30

@@ -1,0 +1,5 @@
+{
+  "malformed_ir": "{\"variables\": \"not a list\"}",
+  "native": "Decision: choose one site.\n```python\nimport gurobipy as gp\nm = gp.Model()\n```",
+  "unsupported": "UNSUPPORTED: I cannot express the requested objective in this IR."
+}

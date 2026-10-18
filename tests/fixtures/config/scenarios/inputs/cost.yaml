@@ -1,0 +1,35 @@
+# Synthetic baseline-verification fixture; not real bank/CSP evidence.
+version: 1
+synthetic: true
+currency: USD
+horizon_months: 36
+fx_rates_to_usd:
+  USD: 1.0
+per_site_monthly_fixed:
+  AWS_SG: 100
+  AWS_HK: 100
+  AWS_UK: 100
+  AZURE_HK: 100
+  AZURE_UK: 100
+  AZURE_IN: 100
+  GLOBAL_DC_HK: 100
+  GLOBAL_DC_LONDON: 100
+  COUNTRY_DC_IN: 100
+  COUNTRY_DC_LONDON: 100
+per_vcpu_monthly:
+  AWS_SG: 6
+  AWS_HK: 18
+  AWS_UK: 17
+  AZURE_HK: 12
+  AZURE_UK: 17
+  AZURE_IN: 14
+  GLOBAL_DC_HK: 8
+  GLOBAL_DC_LONDON: 13
+  COUNTRY_DC_IN: 11
+  COUNTRY_DC_LONDON: 12
+license_monthly_per_application: 100
+operations_monthly_per_application: 150
+include_dr_cost: true
+budget:
+  enabled: false
+  max_total_tco_usd: null
