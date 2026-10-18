@@ -1,8 +1,10 @@
-# AI-Assisted Enterprise Workload Placement with OptiMind-SFT and Gurobi
+# Beyond LLMs and Machine Learning: AI-Assisted Decision Optimization
 
-**A research proof-of-concept for deciding where an enterprise application should run—using explicit business rules, AI-assisted mathematical formulation, mathematical optimization, and independent validation.**
+**Exploring a new approach to complex enterprise decision-making by combining AI, mathematical decision models, and optimization.**
 
-> **Why this project?** An LLM can suggest a hosting location, and machine learning can forecast future demand. But choosing the *best permitted* location across cost, performance, capacity, policy, and resilience requirements is a **decision optimization** problem. This project explores how a specialized AI model and an established mathematical solver can work together to address it.
+Banks face complex technology decisions every day—from deciding where to host critical applications to balancing infrastructure costs, performance, regulatory requirements, and operational risks. Traditional approaches often rely on expert judgment, spreadsheets, and manual assessments. While Large Language Models (LLMs) can generate recommendations and Machine Learning (ML) can predict outcomes, a different challenge remains: How can organizations systematically identify the best possible decision while satisfying multiple business constraints?
+
+This project explores AI-assisted decision optimization, an emerging approach that moves beyond generating answers or predicting outcomes to identifying mathematically optimized decisions. Using enterprise workload placement as a practical banking use case, it demonstrates how AI can assist in selecting a mathematical decision model, while an optimizer evaluates feasible alternatives to identify the best solution against defined business objectives and constraints. Although demonstrated through application hosting, this approach has broader potential across banking—including capital allocation, liquidity management, resource planning, risk management, and operational optimization—where decisions must balance competing priorities while respecting mandatory requirements.
 
 ## The business problem
 
@@ -16,6 +18,8 @@ Imagine a financial institution preparing to deploy a critical payments applicat
 - **Risk:** How does the placement affect concentration and potential failure impact?
 
 Some requirements are mandatory; others are preferences to balance. The goal is to find the lowest-scoring **feasible** placement under the organization's configured priorities.
+
+> **Why this project?** An LLM can suggest a hosting location, and machine learning can forecast future demand. But choosing the *best permitted* location across cost, performance, capacity, policy, and resilience requirements is a **decision optimization** problem. This project explores how a specialized AI model and an established mathematical solver can work together to address it.
 
 This repository models **one new application at a time**, while using an existing portfolio of applications as fixed context. The example is synthetic: it is designed to illustrate an enterprise decision process, not to provide real banking advice or live cloud recommendations.
 
